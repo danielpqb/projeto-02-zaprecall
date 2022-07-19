@@ -1,5 +1,6 @@
 export default function BeginButton() {
-    function changeScreen() {
+    function changeScreen(screen) {
+
         return
     }
     return (
