@@ -1,0 +1,34 @@
+body {
+    background: #FB6B6B;
+}
+
+ion-icon[name='close-circle'] {
+    color: #FF3030;
+}
+
+ion-icon[name='help-circle'] {
+    color: #FF922E;
+}
+
+ion-icon[name='checkmark-circle'] {
+    color: #2FBE34;
+}
+
+.screen01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.zapIcon {
+    width: 140px;
+    height: 100px;
+}
+
+.zapIcon img {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+}
