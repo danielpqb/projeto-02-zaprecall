@@ -1,10 +1,10 @@
-export default function BeginButton() {
-    function changeScreen(screen) {
+import ReactDOM from "react-dom"
+import App from "./App"
+import Screen02 from "./Screen02"
 
-        return
-    }
+export default function BeginButton() {
     return (
-        <div className="beginButton" onClick={() => { changeScreen(2) }}>
+        <div className="beginButton" onClick={() => { ReactDOM.render(<App screen={<Screen02 />} />, document.querySelector('body')) }}>
             Iniciar Recall!
         </div>
     )

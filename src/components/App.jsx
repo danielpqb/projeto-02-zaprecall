@@ -1,9 +1,7 @@
-import Screen01 from "./Screen01"
-
-export default function App() {
+export default function App(props) {
     return (
         <div className="app">
-            <Screen01 />
+            {props.screen}
         </div>
     )
 }

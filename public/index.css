@@ -25,17 +25,10 @@ ion-icon[name='checkmark-circle'] {
     color: #2FBE34;
 }
 
-.screen01 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.zapIcon {
-    width: 240px;
-    height: 200px;
+.app,
+.screen01,
+.screen02 {
+    margin: 0px;
 }
 
 .zapIcon img {
@@ -50,7 +43,21 @@ ion-icon[name='checkmark-circle'] {
     font-size: 36px;
 }
 
-.beginButton {
+.screen01,
+.screen02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.screen01 .zapIcon {
+    width: 240px;
+    height: 200px;
+}
+
+.screen01 .beginButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,4 +74,81 @@ ion-icon[name='checkmark-circle'] {
     color: #D70900;
     font-weight: 400;
     font-size: 18px;
+}
+
+.screen02 {
+    justify-content: flex-start;
+}
+
+.screen02 .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen02 .zapIcon {
+    width: 50px;
+    height: 60px;
+}
+
+.screen02 .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 15px;
+
+    width: 300px;
+    height: 65px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+}
+
+.screen02 .opened {
+    background: #FFFFD5;
+}
+
+.screen02 .revealed {
+    background: #FFFFD5;
+}
+
+.screen02 .answered {
+    text-decoration-line: line-through;
+}
+
+.screen02 .question ion-icon {
+    font-size: 23px;
+}
+
+.screen02 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100vw;
+    height: 70px;
+    margin: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
 }
