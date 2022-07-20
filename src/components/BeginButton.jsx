@@ -4,7 +4,7 @@ import Screen02 from "./Screen02"
 
 export default function BeginButton() {
     return (
-        <div className="beginButton" onClick={() => { ReactDOM.render(<App screen={<Screen02 />} />, document.querySelector('body')) }}>
+        <div className="beginButton" onClick={() => { ReactDOM.render(<App screen={<Screen02 />} />, document.querySelector('.root')) }}>
             Iniciar Recall!
         </div>
     )

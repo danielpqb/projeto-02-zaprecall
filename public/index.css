@@ -25,10 +25,22 @@ ion-icon[name='checkmark-circle'] {
     color: #2FBE34;
 }
 
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
 .app,
+.root,
 .screen01,
 .screen02 {
     margin: 0px;
+}
+
+.screen02 {
+    margin-bottom: 80px;
 }
 
 .zapIcon img {
@@ -49,7 +61,6 @@ ion-icon[name='checkmark-circle'] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .screen01 .zapIcon {
@@ -113,16 +124,69 @@ ion-icon[name='checkmark-circle'] {
     color: #333333;
 }
 
-.screen02 .opened {
+.screen02 .opened,
+.screen02 .revealed {
     background: #FFFFD5;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .screen02 .revealed {
-    background: #FFFFD5;
+    padding-bottom: 0px;
+}
+
+.screen02 .opened ion-icon {
+    align-self: flex-end;
 }
 
 .screen02 .answered {
     text-decoration-line: line-through;
+}
+
+.screen02 .recallFlags {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+
+    margin: 8px 0px;
+    margin-top: 20px;
+
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.screen02 .recallFlags .recallFlag {
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 0px 2px;
+    padding: 5px;
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.screen02 .recallFlags .red {
+    background: #FF3030;
+}
+
+.screen02 .recallFlags .orange {
+    background: #FF922E;
+}
+
+.screen02 .recallFlags .green {
+    background: #2FBE34;
 }
 
 .screen02 .question ion-icon {
