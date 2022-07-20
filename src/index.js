@@ -7,5 +7,4 @@ ReactDOM.render(<App screen={<Screen01 />} />, document.querySelector('.root'))
 
 /*<ion-icon name="checkmark-circle"></ion-icon>
 <ion-icon name="close-circle"></ion-icon>
-<ion-icon name="help-circle"></ion-icon>
-<ion-icon name="refresh-outline"></ion-icon>*/
+<ion-icon name="help-circle"></ion-icon>*/

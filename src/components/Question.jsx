@@ -2,6 +2,12 @@ import React from "react"
 
 export default function Question(props) {
     const [questionStateClass, setQuestionStateClass] = React.useState('')
+    const [questionContent, setQuestionContent] = React.useState(
+        <>
+            {"Pergunta " + props.id}
+            <ion-icon name="play-outline" onClick={() => { changeQuestionStateClass() }}></ion-icon>
+        </>
+    )
 
     function changeQuestionStateClass() {
         function RecallFlag(props) {
@@ -45,15 +51,8 @@ export default function Question(props) {
         console.log(questionStateClass)
     }
 
-    const [questionContent, setQuestionContent] = React.useState(
-        <>
-            {"Pergunta " + props.id}
-            <ion-icon name="play-outline" onClick={() => { changeQuestionStateClass() }}></ion-icon>
-        </>
-    )
-
     return (
-        <div className={"question " + questionStateClass} id={props.id}>
+        <div className={"question " + questionStateClass} id={props.id} onClick={() => { changeQuestionStateClass() }}>
             {questionContent}
         </div>
     )
