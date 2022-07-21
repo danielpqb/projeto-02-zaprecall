@@ -11,6 +11,7 @@ body {
 
 div {
     margin: 15px;
+    display: flex;
 }
 
 ion-icon[name='close-circle'] {
@@ -26,7 +27,7 @@ ion-icon[name='checkmark-circle'] {
 }
 
 .root {
-    display: flex;
+
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -57,7 +58,7 @@ ion-icon[name='checkmark-circle'] {
 
 .screen01,
 .screen02 {
-    display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -69,7 +70,7 @@ ion-icon[name='checkmark-circle'] {
 }
 
 .screen01 .beginButton {
-    display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -92,7 +93,7 @@ ion-icon[name='checkmark-circle'] {
 }
 
 .screen02 .header {
-    display: flex;
+
     justify-content: center;
     align-items: center;
 }
@@ -103,7 +104,7 @@ ion-icon[name='checkmark-circle'] {
 }
 
 .screen02 .question {
-    display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -129,7 +130,7 @@ ion-icon[name='checkmark-circle'] {
     background: #FFFFD5;
     height: 100%;
 
-    display: flex;
+
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
@@ -148,7 +149,7 @@ ion-icon[name='checkmark-circle'] {
 }
 
 .screen02 .recallFlags {
-    display: flex;
+
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -170,7 +171,7 @@ ion-icon[name='checkmark-circle'] {
     width: 100%;
     min-height: 100%;
 
-    display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -203,7 +204,7 @@ ion-icon[name='checkmark-circle'] {
     height: 70px;
     margin: 0px;
 
-    display: flex;
+
     justify-content: center;
     align-items: center;
 

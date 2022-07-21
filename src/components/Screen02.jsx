@@ -1,8 +1,11 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import Question from "./Question"
+import React from "react"
 
 export default function Screen02() {
+    const [questionsQnt, setQuestionsQnt] = React.useState(0)
+
     const questions = [
         { question: 'O que é JSX?', answer: 'Uma extensão de linguagem do JavaScript.' },
         { question: 'O React é __', answer: 'uma biblioteca JavaScript para construção de interfaces.' },
