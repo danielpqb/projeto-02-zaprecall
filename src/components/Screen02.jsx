@@ -4,7 +4,9 @@ import Question from "./Question"
 import React from "react"
 
 export default function Screen02() {
-    const [questionsQnt, setQuestionsQnt] = React.useState(0)
+    const [answersFlag, setAnswersFlag] = React.useState([])
+
+    console.log(answersFlag)
 
     const questions = [
         { question: 'O que é JSX?', answer: 'Uma extensão de linguagem do JavaScript.' },
@@ -20,8 +22,16 @@ export default function Screen02() {
     return (
         <div className="screen02">
             <Header />
-            {questions.map((question, index) => { return (<Question question={question.question} answer={question.answer} id={index + 1} key={index} />) })}
-            <Footer />
+            {questions.map((question, index) => {
+                return (<Question
+                    question={question.question}
+                    answer={question.answer}
+                    id={index + 1}
+                    key={index}
+                    setAnswersFlag={setAnswersFlag}
+                    answersFlag={answersFlag} />)
+            })}
+            <Footer answersFlag={answersFlag} />
         </div>
     )
 }

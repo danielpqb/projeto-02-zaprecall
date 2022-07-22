@@ -1,47 +1,98 @@
 import React from "react"
 
-export default function Question(props) {
-    const [questionStateClass, setQuestionStateClass] = React.useState('')
+function RecallFlag({ color, content, setQuestionStateClass, setAnswersFlag, answersFlag, questionId, setFlag, flag }) {
+    return (
+        <div
+            className={"recallFlag " + color}
+            onClick={() => {
+                setFlag(' ' + color + 'Flag')
+                setQuestionStateClass(' answered')
+                setAnswersFlag([...answersFlag, { flag: flag, questionId: questionId }])
+            }}>
+            {content}
+        </div>
+    )
+}
 
-    function RecallFlag(props) {
-        return (
-            <div className={"recallFlag " + props.flag}>
-                {props.content}
-            </div>
-        )
+export default function Question({ question, answer, id, answersFlag, setAnswersFlag }) {
+    const [questionStateClass, setQuestionStateClass] = React.useState('')
+    const [flag, setFlag] = React.useState('')
+
+    function selectFlagIcon(flag) {
+        switch (flag) {
+            case ' redFlag':
+                return 'close-circle'
+            case ' orangeFlag':
+                return 'help-circle'
+            case ' greenFlag':
+                return 'checkmark-circle'
+            default:
+                break
+        }
     }
 
     return (
-        <div className={"question " + questionStateClass} id={props.id}>
+        <div className={"question" + questionStateClass + flag} id={id}>
             {
                 questionStateClass === '' &&
                 <>
-                    {"Pergunta " + props.id}
-                    <ion-icon name="play-outline" onClick={() => { setQuestionStateClass('opened') }}></ion-icon>
+                    {"Pergunta " + id}
+                    <ion-icon
+                        name="play-outline"
+                        onClick={() => { setQuestionStateClass(' opened') }}>
+                    </ion-icon>
                 </>
             }
             {
-                questionStateClass === 'opened' &&
+                questionStateClass === ' opened' &&
                 <>
-                    {props.question}
-                    <ion-icon name="refresh-outline" onClick={() => { setQuestionStateClass('revealed') }}></ion-icon>
+                    {question}
+                    <ion-icon
+                        name="refresh-outline"
+                        onClick={() => { setQuestionStateClass(' revealed') }}>
+                    </ion-icon>
                 </>
             }
             {
-                questionStateClass === 'revealed' &&
+                questionStateClass === ' revealed' &&
                 <>
-                    {props.answer}
+                    {answer}
                     <div className="recallFlags">
-                        <RecallFlag flag='red' content='Não lembrei' onClick={() => { setQuestionStateClass('answered') }} />
-                        <RecallFlag flag='orange' content='Quase não lembrei' onClick={() => { setQuestionStateClass('answered') }} />
-                        <RecallFlag flag='green' content='Zap!' onClick={() => { setQuestionStateClass('answered') }} />
+                        <RecallFlag
+                            color='red'
+                            content='Não lembrei'
+                            setQuestionStateClass={setQuestionStateClass}
+                            answersFlag={answersFlag}
+                            setAnswersFlag={setAnswersFlag}
+                            questionId={id}
+                            flag={flag}
+                            setFlag={setFlag} />
+                        <RecallFlag
+                            color='orange'
+                            content='Quase não lembrei'
+                            setQuestionStateClass={setQuestionStateClass}
+                            answersFlag={answersFlag}
+                            setAnswersFlag={setAnswersFlag}
+                            questionId={id}
+                            flag={flag}
+                            setFlag={setFlag} />
+                        <RecallFlag
+                            color='green'
+                            content='Zap!'
+                            setQuestionStateClass={setQuestionStateClass}
+                            answersFlag={answersFlag}
+                            setAnswersFlag={setAnswersFlag}
+                            questionId={id}
+                            flag={flag}
+                            setFlag={setFlag} />
                     </div>
                 </>
             }
             {
-                questionStateClass === 'answered' &&
+                questionStateClass === ' answered' &&
                 <>
-                    {"Pergunta " + props.id}
+                    {"Pergunta " + id}
+                    <ion-icon name={selectFlagIcon(flag)}></ion-icon>
                 </>
             }
         </div>

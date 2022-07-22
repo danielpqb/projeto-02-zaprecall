@@ -217,3 +217,15 @@ ion-icon[name='checkmark-circle'] {
     font-size: 18px;
     color: #333333;
 }
+
+.screen02 .redFlag {
+    color: #FF3030;
+}
+
+.screen02 .orangeFlag {
+    color: #FF922E;
+}
+
+.screen02 .greenFlag {
+    color: #2FBE34;
+}

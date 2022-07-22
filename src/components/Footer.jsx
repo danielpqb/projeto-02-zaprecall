@@ -1,11 +1,9 @@
 import React from "react"
 
-export default function Footer() {
-    const [answeredQnt, setAnsweredQnt] = React.useState(0)
-
+export default function Footer({ answersFlag }) {
     return (
         <div className="footer">
-            {answeredQnt}/8 CONCLUÍDOS
+            {answersFlag.length}/8 CONCLUÍDOS
         </div>
     )
 }
