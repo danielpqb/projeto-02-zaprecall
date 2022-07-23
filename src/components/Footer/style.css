@@ -1,0 +1,82 @@
+.screen02 .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100vw;
+    margin: 0px;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
+}
+
+.screen02 .footer {
+    flex-direction: column;
+}
+
+.screen02 .footerIcons,
+.screen02 .footerHeader,
+.screen02 .footerMessage,
+.screen02 .footerGameOver,
+.screen02 .footerStats,
+.screen02 .footerRestartGame {
+    margin: 0px;
+}
+
+.screen02 .footerIcons ion-icon {
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+.screen02 .footerHeader {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.screen02 .footerHeader b {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.screen02 .footerMessage {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.screen02 .footerTaller .footerHeader,
+.screen02 .footerTaller .footerMessage {
+    max-width: 220px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.screen02 .footerTaller .footerMessage {
+    margin-top: 0px;
+}
+
+.screen02 .footerStats {
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 70px;
+    flex-direction: column;
+}
+
+.screen02 .footerTaller .footerGameOver {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    min-height: 100px;
+    flex-direction: column;
+}
