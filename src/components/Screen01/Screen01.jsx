@@ -1,6 +1,7 @@
-import BeginButton from "./BeginButton"
-import ZapRecallIcon from "./ZapRecallIcon"
-import ZapRecallLogo from "./ZapRecallLogo"
+import BeginButton from "../BeginButton/BeginButton"
+import ZapRecallIcon from "../ZapRecallIcon/ZapRecallIcon"
+import ZapRecallLogo from "../ZapRecallLogo/ZapRecallLogo"
+import './style.css'
 
 export default function Screen01() {
     return (

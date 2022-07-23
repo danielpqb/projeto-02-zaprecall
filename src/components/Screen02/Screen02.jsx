@@ -1,7 +1,8 @@
-import Header from "./Header/Header"
-import Footer from "./Footer/Footer"
-import Question from "./Question/Question"
+import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
+import Question from "../Question/Question"
 import React from "react"
+import './style.css'
 
 export default function Screen02() {
     const [answersFlag, setAnswersFlag] = React.useState([])
