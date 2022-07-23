@@ -1,4 +1,5 @@
 import React from "react"
+import './style.css'
 
 function RecallFlag({ color, content, setQuestionStateClass, setAnswersFlag, answersFlag, questionId, setFlag, setTallerFooter, setIsPerfect }) {
     function selectFlagIcon(color) {

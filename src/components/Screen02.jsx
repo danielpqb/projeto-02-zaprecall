@@ -1,6 +1,6 @@
-import Header from "./Header"
-import Footer from "./Footer"
-import Question from "./Question"
+import Header from "./Header/Header"
+import Footer from "./Footer/Footer"
+import Question from "./Question/Question"
 import React from "react"
 
 export default function Screen02() {

@@ -1,5 +1,6 @@
-import ZapRecallIcon from "./ZapRecallIcon"
-import ZapRecallLogo from "./ZapRecallLogo"
+import ZapRecallIcon from "../ZapRecallIcon"
+import ZapRecallLogo from "../ZapRecallLogo"
+import './style.css'
 
 export default function Header() {
     return (
