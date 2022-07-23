@@ -57,7 +57,7 @@ export default function Footer({ answersFlag, tallerFooter, isPerfect }) {
                 }
             </div>
             <div className="footerStats">
-                {answersFlag.length + '/8 CONCLUÍDOS'}
+                {answersFlag.length + '/4 CONCLUÍDOS'}
                 <FooterIcons />
             </div>
             <div className="footerRestartGame">
