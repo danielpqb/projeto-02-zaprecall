@@ -1,20 +1,39 @@
 import React from "react"
 
-function RecallFlag({ color, content, setQuestionStateClass, setAnswersFlag, answersFlag, questionId, setFlag, flag }) {
+function RecallFlag({ color, content, setQuestionStateClass, setAnswersFlag, answersFlag, questionId, setFlag, setTallerFooter, setIsPerfect }) {
+    function selectFlagIcon(color) {
+        switch (color) {
+            case 'red':
+                return 'close-circle'
+            case 'orange':
+                return 'help-circle'
+            case 'green':
+                return 'checkmark-circle'
+            default:
+                break
+        }
+    }
+
     return (
         <div
             className={"recallFlag " + color}
             onClick={() => {
                 setFlag(' ' + color + 'Flag')
                 setQuestionStateClass(' answered')
-                setAnswersFlag([...answersFlag, { flag: flag, questionId: questionId }])
+                setAnswersFlag(() => { return [...answersFlag, { questionId: questionId, icon: selectFlagIcon(color), flag: ' ' + color + 'Flag' }] })
+                if (answersFlag.length >= 3) {
+                    setTallerFooter(' footerTaller')
+                }
+                if (color === 'red') {
+                    setIsPerfect(false)
+                }
             }}>
             {content}
         </div>
     )
 }
 
-export default function Question({ question, answer, id, answersFlag, setAnswersFlag }) {
+export default function Question({ question, answer, id, answersFlag, setAnswersFlag, setTallerFooter, setIsPerfect }) {
     const [questionStateClass, setQuestionStateClass] = React.useState('')
     const [flag, setFlag] = React.useState('')
 
@@ -65,8 +84,9 @@ export default function Question({ question, answer, id, answersFlag, setAnswers
                             answersFlag={answersFlag}
                             setAnswersFlag={setAnswersFlag}
                             questionId={id}
-                            flag={flag}
-                            setFlag={setFlag} />
+                            setFlag={setFlag}
+                            setTallerFooter={setTallerFooter}
+                            setIsPerfect={setIsPerfect} />
                         <RecallFlag
                             color='orange'
                             content='Quase não lembrei'
@@ -74,8 +94,9 @@ export default function Question({ question, answer, id, answersFlag, setAnswers
                             answersFlag={answersFlag}
                             setAnswersFlag={setAnswersFlag}
                             questionId={id}
-                            flag={flag}
-                            setFlag={setFlag} />
+                            setFlag={setFlag}
+                            setTallerFooter={setTallerFooter}
+                            setIsPerfect={setIsPerfect} />
                         <RecallFlag
                             color='green'
                             content='Zap!'
@@ -83,8 +104,9 @@ export default function Question({ question, answer, id, answersFlag, setAnswers
                             answersFlag={answersFlag}
                             setAnswersFlag={setAnswersFlag}
                             questionId={id}
-                            flag={flag}
-                            setFlag={setFlag} />
+                            setFlag={setFlag}
+                            setTallerFooter={setTallerFooter}
+                            setIsPerfect={setIsPerfect} />
                     </div>
                 </>
             }

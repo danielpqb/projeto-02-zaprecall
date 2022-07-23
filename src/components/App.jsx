@@ -1,7 +1,7 @@
-export default function App(props) {
+export default function App({ screen }) {
     return (
         <div className="app">
-            {props.screen}
+            {screen}
         </div>
     )
 }
